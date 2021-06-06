@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+    
+<head lang="tr">
+    
+    <meta charset="utf-8">
+    
+    <title>Motor Seri No Dökümü</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="styleSheet.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="motorSeriNoUygulamasi.js"></script>
+    
+</head>
+    
+<script>
+   
+    </script>
+        
+    
+<header>
+        
+    <h1>Motor Seri Numaraları Çalışması</h1>
+        
+</header>
+    
+<body >
+    
+    <article style="padding:3px;">
+        <P>
+            -Dosya hazır olarak seçilmiş haldedir. Diğer girdilere de dokunmaya gerek yoktur.<br />
+            -Veri dosyası başlık satırına sahip olduğundan lütfen ilgili kutucuğı seçin.<br /> 
+            -Ardından aşağıdaki "Data çağır ve İşle" butonuna basın.<br />
+            -Data yüklendikten sonra "Sonuç Göster" butonuna basarsanız sonuçlar sunulacaktır.<br />
+            İyi çalışmalar dilerim.<br
+        </P>
+    </article>
+    
+    <div id="inputDiv">
+    <!--<label for="fileSelector">Şimdilik bu özelliği atlayın. Çıkan uyarı penceresine tamam dyin</label>
+    
+    <input type="file" accept=".txt" id="fileSelector" name="fileSelector"><br />-->
+    <p style="text-align:center;">Girdiler</p>
+    <select id="fileList">
+        <option value="makineDökümü.txt">Tüm motorlar</option>      
+        </select><br />
+       
+    <label class="label" for="markaStunu">Marka isimlerinin sütun numarasını girin (soldan sağa sıfırdan başlayarak):</label>
+    
+    <input type="number" class="num" id="markaStunu" name="markaStunu" value="1"><br />
+    
+    <label class="label" for="seriNoStunu">Seri numaralarının bulunduğu sütun numarasını girin:</label>
+    
+    <input type="number" class="num"  id="seriNoStunu" name="seriNoStunu" value="3"><br />
+        
+    <label  class="label" for="motorTipiStunu">Motor Tiplerinin numaralarının bulunduğu sütun numarasını girin:</label>
+    <input type="number" class="num"  id="motorTipiStunu" name="motorTipiStunu" value="2"><br />
+    
+    <input type="checkbox" value="true" name="headerRow" id="headerRow">
+    <label for="headerRow">Veri dosyası başlık satırına sahip mi?</label>  
+    
+    <br />    
+            
+    <div class="buttonsIn">
+    
+    <button id="dataCall" onclick="getDataFromFile()">Data çağır ve işle</button>
+    
+    <button onclick="window.print()">Print this page</button>
+    
+    <button onclick="exportData()" id="exportButton" name="exportButton">Marka Listesini Dışa Aktar</button>
+        </div>
+                
+    </div>
+    <hr>
+    
+    <div id="outputDiv">
+        
+        <button id="filterRes" onclick="Results.filterResults()">Sonuçları filtrele</button>
+        
+        <button id="exportRes" onclick="exportResultsAsCSV()">Sonuçları Dışarı Aktar</button>
+        
+        <button id="exportRes" onclick="exportFilteredResultsAsCSV()">Filtrelenmiş Sonuçları Dışarı Aktar</button>
+        
+        <br /><br />
+        
+        <article id="markaSection">
+            
+            <label for="markaSelection">Marka Seç</label><br />  
+            
+            <select id="markaSelection" name="markaSelection">
+                
+            </select>
+            
+            <p id="formatCount"></p>
+            
+            </article>
+        
+        <div id="resultTables">
+        <table id="formatList">
+            <tr>
+                <th>Formatlar</th>
+                <th>Mevut Sayısı</th>        
+                </tr>       
+            </table>
+        
+        <table id="detailTable">
+            </table>
+
+        </div>
+        
+  
+        </div>
+ <div class="modal" id="informationDiv">
+    
+    <p id="information">
+        
+    </p>
+    
+    </div>
+
+</body>
+    </html>
